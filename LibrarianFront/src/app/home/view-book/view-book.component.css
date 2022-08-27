@@ -1,0 +1,56 @@
+.card{
+    background-color: rgba(120, 111, 111, 0.131)
+}
+
+.btn{
+    background-color:rgba(27,26,26,0.698)
+}
+.volver,.btn:hover{
+    background-color: rgb(67,109,152);
+}
+
+
+
+p{
+    color:darkslategray
+}
+
+#spin{
+    width: 4rem;
+    height: 4rem;
+}
+
+
+
+
+/* .text-card-title {
+  font-size: 0.9rem;
+  font-family: "Comfoorta-Bold";
+}
+.text-blue {
+  color: #62add7;
+}
+.text-title {
+  font-size: 1.3rem;
+}
+.text-card-text,
+.card-button-text {
+  font-size: 0.9rem;
+  color: #403e3e;
+  font-family: "Comfoorta-Light";
+}
+.card-button-text {
+  background-color: #62add7;
+  border: #62add7;
+  font-size: 0.8em;
+  color: #ffffff;
+}
+
+.card-book {
+  border: #ffffff;
+  box-shadow: #bbbbbb 3px 3px;
+}
+.pb-20 {
+  margin-top: 9rem;
+  margin-bottom: 9rem;
+} */
