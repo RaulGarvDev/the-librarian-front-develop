@@ -6,7 +6,7 @@
 export const environment = {
 
 
-  production: false,
+  production: true,
   urlBooksRandom:  `${urlBasic}/get`,
   urlAddBook:  `${urlBasic}/createBook`,
   urlAddReserve:  `${urlBasic}/reserve`,
