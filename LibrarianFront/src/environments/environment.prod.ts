@@ -1,4 +1,4 @@
-const urlBasic: string = "88.1.205.136:9595";
+const urlBasic: string = "https://librarian-project.herokuapp.com";
 
 export const environment = {
 

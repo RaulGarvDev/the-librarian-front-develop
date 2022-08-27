@@ -1,7 +1,7 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
- const urlBasic: string = "88.1.205.136:9595";
+ const urlBasic: string = "https://librarian-project.herokuapp.com";
 
 export const environment = {
 
