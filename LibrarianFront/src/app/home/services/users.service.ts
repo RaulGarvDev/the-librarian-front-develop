@@ -37,7 +37,7 @@ export class UsersService {
   }
 
   getCurrentUser() {
-    return this.http.get(`${HOST}/getCurrentUser`, this.httpOptions);
+    return this.http.get(`${HOST}/getCurrentUser`);
   }
 
   putChangePassword(changePasswordDTO: ChangePassword): Observable<any> {
