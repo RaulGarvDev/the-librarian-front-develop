@@ -11,6 +11,8 @@ const HOST = "https://thelibrarianback.herokuapp.com"
 
 export class RegistroService {
 
+  count:number =0;
+
   constructor(private http: HttpClient) { }
 
   httpOptions = {
@@ -22,6 +24,11 @@ export class RegistroService {
 
 
   postUsuario(registro: Registro){
+    this.count++;
+     registro.id = this.count;
+    
     return this.http.post(`${HOST}`,registro,this.httpOptions);
+
+    
   }
 }

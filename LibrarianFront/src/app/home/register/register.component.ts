@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 import { Registro } from '../interfaces/registro';
 import { RegistroService } from '../services/registro.service';
 import { TranslateService } from '@ngx-translate/core';
+import { count } from 'console';
 
 @Component({
   selector: 'app-register',
@@ -12,7 +13,11 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
+
+
+
   nuevoRegistro: Registro = {
+    id: 0,
     nombre: '',
     correo: '',
     password: '',

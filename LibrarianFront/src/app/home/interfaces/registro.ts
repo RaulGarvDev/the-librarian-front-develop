@@ -1,4 +1,7 @@
+import * as internal from "stream"
+
 export interface Registro {
+  id:number,
   nombre: string,
   correo: string,
   password: string,
