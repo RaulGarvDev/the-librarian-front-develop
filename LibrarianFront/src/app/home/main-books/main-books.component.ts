@@ -30,6 +30,7 @@ export class MainBooksComponent implements OnInit {
       this.books = data.items;
     },(err)=>{
       this.errorMessage = err.errorMessage;
+      console.error(this.errorMessage);
     }
     );
   }
