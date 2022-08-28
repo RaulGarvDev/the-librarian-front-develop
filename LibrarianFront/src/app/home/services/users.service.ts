@@ -34,7 +34,7 @@ export class UsersService {
 
   putChangePassword(changePasswordDTO: ChangePassword): Observable<any> {
 
-    console.log("Segundo console log del servicio "+ changePasswordDTO.email +" " + changePasswordDTO.password+ " " +changePasswordDTO.newPassword);
+   
 
     return this.http.put(`${this.changePassword}/${changePasswordDTO.email}/${changePasswordDTO.password}/${changePasswordDTO.newPassword}`, changePasswordDTO);
 

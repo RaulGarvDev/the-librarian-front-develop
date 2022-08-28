@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -19,6 +19,14 @@ export class BookService {
 
   private URLFindBookByIdDB = environment.urlAllBooksByIdBD;
 
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+      "Access-Control-Allow-Origin": "*",
+      
+    } ),responseType: 'text' as 'json'
+  };
+
 
 
   constructor(private http: HttpClient) {
@@ -27,7 +35,7 @@ export class BookService {
 
   getRandomBooks(): Observable<Books> {
 
-    return this.http.get<Books>(`${this.API_URL}/random`);
+    return this.http.get<Books>(`${this.API_URL}/random`, this.httpOptions);
   }
 
 
