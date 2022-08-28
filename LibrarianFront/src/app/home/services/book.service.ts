@@ -15,7 +15,7 @@ export class BookService {
 
   private URLaddBook = environment.urlAddBook;
 
-  private URLFindByIsbnDB = environment+"https://git.heroku.com/thelibrarianback.git";
+  private URLFindByIsbnDB = environment+"https://thelibrarianback.herokuapp.com";
 
   private URLFindBookByIdDB = environment.urlAllBooksByIdBD;
 

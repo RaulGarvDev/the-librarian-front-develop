@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Registro } from '../interfaces/registro';
 
-const HOST = "https://git.heroku.com/thelibrarianback.git/auth/registro"
+const HOST = "https://thelibrarianback.herokuapp.com/auth/registro"
 
 @Injectable({
   providedIn: 'root'
