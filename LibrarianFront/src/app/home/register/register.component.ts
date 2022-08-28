@@ -14,10 +14,7 @@ import { count } from 'console';
 })
 export class RegisterComponent implements OnInit {
 
-
-
   nuevoRegistro: Registro = {
-    
     nombre: '',
     correo: '',
     password: '',
