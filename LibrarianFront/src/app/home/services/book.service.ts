@@ -23,7 +23,7 @@ export class BookService {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
       "Access-Control-Allow-Origin": "*",   
-    } ),responseType: 'json' as 'json'
+    } ),responseType: 'array' as 'json'
   };
 
 
