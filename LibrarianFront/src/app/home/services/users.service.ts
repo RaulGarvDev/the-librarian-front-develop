@@ -1,4 +1,4 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { EmailValidator } from '@angular/forms';
 import { Observable } from 'rxjs';
@@ -14,10 +14,18 @@ export class UsersService {
 
   private changePassword = environment.urlChangePassword;
 
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+      "Access-Control-Allow-Origin": "*",
+      
+    } )
+  };
+
   constructor(private http: HttpClient) {}
 
   postLogin(usuario: any) {
-    return this.http.post(`${HOST}/login`, usuario);
+    return this.http.post(`${HOST}/login`, usuario, this.httpOptions);
   }
 
   logOut() {
@@ -29,7 +37,7 @@ export class UsersService {
   }
 
   getCurrentUser() {
-    return this.http.get(`${HOST}/getCurrentUser`);
+    return this.http.get(`${HOST}/getCurrentUser`, this.httpOptions);
   }
 
   putChangePassword(changePasswordDTO: ChangePassword): Observable<any> {
