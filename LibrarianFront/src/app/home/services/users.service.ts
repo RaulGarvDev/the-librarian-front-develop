@@ -25,7 +25,7 @@ export class UsersService {
   constructor(private http: HttpClient) {}
 
   postLogin(usuario: any) {
-    return this.http.post(`${HOST}/login`, usuario, this.httpOptions);
+    return this.http.post(`${HOST}/login`, usuario);
   }
 
   logOut() {
