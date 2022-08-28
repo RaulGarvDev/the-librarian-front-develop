@@ -24,7 +24,7 @@ export class BookService {
       'Content-Type':  'application/json',
       "Access-Control-Allow-Origin": "*",
       
-    } ),responseType: 'text' as 'json'
+    } ),responseType: 'any' as 'any'
   };
 
 
