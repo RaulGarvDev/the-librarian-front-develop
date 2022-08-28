@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 import { Registro } from '../interfaces/registro';
 import { RegistroService } from '../services/registro.service';
 import { TranslateService } from '@ngx-translate/core';
-import { count } from 'console';
+
 
 @Component({
   selector: 'app-register',
