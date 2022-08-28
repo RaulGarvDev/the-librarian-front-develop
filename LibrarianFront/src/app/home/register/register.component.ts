@@ -17,7 +17,7 @@ export class RegisterComponent implements OnInit {
 
 
   nuevoRegistro: Registro = {
-    id: 0,
+    
     nombre: '',
     correo: '',
     password: '',
