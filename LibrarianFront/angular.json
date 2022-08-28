@@ -49,6 +49,14 @@
                   "maximumError": "5mb"
                 }
               ],
+              "optimization": {
+                "scripts": true,
+                "styles": {
+                     "minify": true,
+                     "inlineCritical": false
+                     },
+                "fonts": true
+            },
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -63,7 +71,7 @@
                 "scripts": true,
                 "styles": {
                   "minify": true,
-                  "inlineCritical": false
+                "inlineCritical": false
                 },
                 "fonts": true
               },

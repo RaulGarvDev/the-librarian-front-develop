@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { EmailValidator } from '@angular/forms';
 import { Observable } from 'rxjs';
@@ -48,4 +48,6 @@ export class UsersService {
 
 
   }
+
+
 }
