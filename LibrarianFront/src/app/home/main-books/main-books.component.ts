@@ -13,7 +13,7 @@ export class MainBooksComponent implements OnInit {
 
 
   books: Item[] = [];
-
+  errorMessage!: string;
 
 
 
@@ -28,7 +28,10 @@ export class MainBooksComponent implements OnInit {
   getBooks() {
     this.bookService.getRandomBooks().subscribe((data) => {
       this.books = data.items;
-    });
+    },(err)=>{
+      this.errorMessage = err.errorMessage;
+    }
+    );
   }
 
 }

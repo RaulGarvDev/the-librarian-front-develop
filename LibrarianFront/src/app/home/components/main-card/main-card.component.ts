@@ -13,7 +13,7 @@ export class MainCardComponent implements OnInit {
   title = 'appBootstrap';
 
   closeResult!: string;
-
+  @Input() errorMessage!: string;
   @Input() books: Item[] = [];
 
   constructor(
