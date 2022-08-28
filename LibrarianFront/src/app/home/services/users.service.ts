@@ -19,7 +19,7 @@ export class UsersService {
       'Content-Type':  'application/json',
       "Access-Control-Allow-Origin": "*",
       
-    } ),responseType: 'arraybuffer'
+    } )
   };
 
   constructor(private http: HttpClient) {}
