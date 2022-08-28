@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { ChangePassword } from '../interfaces/registro';
 
-const HOST = '88.1.205.136:9595/auth';
+const HOST = 'https://thelibrarianback.herokuapp.com/auth';
 
 @Injectable({
   providedIn: 'root',
