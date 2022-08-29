@@ -1,4 +1,4 @@
-const urlBasic: string = "https://thelibrarianback.herokuapp.com";
+const urlBasic: string = "//thelibrarianback.herokuapp.com";
 
 export const environment = {
 
