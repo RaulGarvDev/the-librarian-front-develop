@@ -34,17 +34,17 @@ export class ReserveService {
 
   reservedByUser(id:number):Observable<any>{
 
-    return this.http.get(`${this.urlReserved}/${id}`);
+    return this.http.get(`${this.urlReserved}/${id}`, this.httpOptions);
 
   }
   allReservesByUser(id:number):Observable<any>{
 
-    return this.http.get(`${this.urlAllReserves}/${id}`);
+    return this.http.get(`${this.urlAllReserves}/${id}`, this.httpOptions);
 
   }
 
   updateReserve(reserva: any, id:number ){
-    return this.http.put(`${this.URLaddReserve}/updateReserve/${id}`,reserva);
+    return this.http.put(`${this.URLaddReserve}/updateReserve/${id}`,reserva, this.httpOptions);
   }
 
   downloadPdf(id:number):Observable<any>{
@@ -53,7 +53,7 @@ export class ReserveService {
     //  ejemplo https://roytuts.com/download-file-from-server-using-angular/
     // npm install file-saver --save
     // npm install -D @types/file-saver
-    return this.http.get(`${this.URLaddReserve}/export/pdf/${id}`)
+    return this.http.get(`${this.URLaddReserve}/export/pdf/${id}`, this.httpOptions)
   }
 
 

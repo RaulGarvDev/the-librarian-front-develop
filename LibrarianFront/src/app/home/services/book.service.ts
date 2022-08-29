@@ -42,44 +42,44 @@ export class BookService {
 
   buscarLibroPorId(id: string): Observable<Item> {
 
-    return this.http.get<Item>(`${this.API_URL}/getById/${id}`);
+    return this.http.get<Item>(`${this.API_URL}/getById/${id}`, this.httpOptions);
 
   }
 
   buscarLibroPorIdBD(id: number): Observable<Item> {
 
-    return this.http.get<Item>(`${this.URLFindBookByIdDB}/${id}`);
+    return this.http.get<Item>(`${this.URLFindBookByIdDB}/${id}`, this.httpOptions);
 
   }
 
 
   buscarLibroPorIsbn(isbn: string): Observable<Books> {
 
-    return this.http.get<Books>(`${this.API_URL}/searchByIsbn/${isbn}`);
+    return this.http.get<Books>(`${this.API_URL}/searchByIsbn/${isbn}`,this.httpOptions);
 
   }
 
   searchBookByTitle(title: string): Observable<Books> {
 
-    return this.http.get<Books>(`${this.API_URL}/searchByTitle/${title}`);
+    return this.http.get<Books>(`${this.API_URL}/searchByTitle/${title}`, this.httpOptions);
 
   }
 
   buscarLibroPorAuthor(author: string): Observable<Books> {
 
     // Ernest Hemingway
-    return this.http.get<Books>(`${this.API_URL}/author/${author}`);
+    return this.http.get<Books>(`${this.API_URL}/author/${author}`, this.httpOptions);
   }
 
   addBookBD(book: VolumeInfoBD):Observable<any> {
 
-    return this.http.post(`${this.URLaddBook}`, book);
+    return this.http.post(`${this.URLaddBook}`, book, this.httpOptions);
 
   }
 
   buscarLibroPorIsbnBD(isbn: string): Observable<any> {
 
-    return this.http.get(`${this.URLFindByIsbnDB}/getByIsbn/${isbn}`);
+    return this.http.get(`${this.URLFindByIsbnDB}/getByIsbn/${isbn}`, this.httpOptions);
 
   }
 
