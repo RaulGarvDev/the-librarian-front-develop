@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
@@ -18,10 +18,17 @@ export class ReserveService {
 
   constructor(private http: HttpClient) { }
 
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+      "Access-Control-Allow-Origin": "*",   
+    } )
+  };
+
 
   addReserve(reserve: any):Observable<any> {
 
-    return this.http.post(`${this.URLaddReserve}`, reserve);
+    return this.http.post(`${this.URLaddReserve}`, reserve,this.httpOptions);
 
   }
 
