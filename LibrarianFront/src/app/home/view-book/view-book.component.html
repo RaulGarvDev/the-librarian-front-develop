@@ -123,16 +123,33 @@
                         </div>
                         <div class="col-12">
                             <div class="d-grid gap-2 col-12">
-                                <button
-                                    class="btn btn-lg text-light"
-                                    type="button"
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#collapseExample"
-                                    aria-expanded="false"
-                                    aria-controls="collapseExample"
-                                >
-                                    {{ "BOOK_CARD_SEE_MORE" | translate }}
-                                </button>
+                                <div *ngIf="botonVerMas">
+                                    <button
+                                        (click)="CambiarValorBoton()"
+                                        class="btn btn-lg text-light"
+                                        type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#collapseExample"
+                                        aria-expanded="false"
+                                        aria-controls="collapseExample"
+                                    >
+                                        {{ "BOOK_CARD_SEE_MORE" | translate }}
+                                    </button>
+                                </div>
+
+                                <div *ngIf="botonVerMenos">
+                                    <button
+                                        (click)="CambiarValorBoton2()"
+                                        class="btn btn-lg text-light"
+                                        type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#collapseExample"
+                                        aria-expanded="false"
+                                        aria-controls="collapseExample"
+                                    >
+                                        Ver menos
+                                    </button>
+                                </div>
 
                                 <div class="collapse" id="collapseExample">
                                     <div class="card card-body">
