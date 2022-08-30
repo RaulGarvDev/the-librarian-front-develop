@@ -48,6 +48,8 @@ export class SearchIsbnComponent implements OnInit {
       .pipe(switchMap(({ isbn }) => this.bookService.buscarLibroPorIsbn(isbn)))
       .subscribe({
         next: (books) => {
+
+
           let resultado:number = books.items.length;
 
           if (resultado == 0) {
