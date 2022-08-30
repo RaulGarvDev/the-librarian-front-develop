@@ -14,6 +14,7 @@ import { UsersService } from '../services/users.service';
   templateUrl: './view-book.component.html',
   styleUrls: ['./view-book.component.css'],
 })
+
 export class ViewBookComponent implements OnInit {
   idUsuario: number = 0;
   librosDelUsuario!: number;
@@ -29,6 +30,19 @@ export class ViewBookComponent implements OnInit {
     language: '',
     previewLink: '',
   };
+
+  botonVerMas = true;
+  botonVerMenos = false;
+
+  CambiarValorBoton() {
+    this.botonVerMas = false;
+    this.botonVerMenos = true;
+  }
+
+  CambiarValorBoton2() {
+    this.botonVerMas = true;
+    this.botonVerMenos = false;
+  }
 
   reserveAdd: any = {
 
@@ -107,7 +121,7 @@ export class ViewBookComponent implements OnInit {
         title: 'Oops...',
         text: this.translate.instant('MY_BOOKS_ADD_ALERT_REACHED_LIMIT_TEXT')
       })
-    }else{
+    } else {
       Swal.fire({
         title: this.translate.instant('MY_BOOKS_ADD_ALERT_BUTTON_LOGGED_TEXT'),
         icon: 'question',
@@ -130,7 +144,6 @@ export class ViewBookComponent implements OnInit {
           });
         }
       })
-
 
 
     }
@@ -168,7 +181,7 @@ export class ViewBookComponent implements OnInit {
 
   getReserve() {
     this.reserveService.reservedByUser(this.idUsuario).subscribe((data) => {
-        this.librosDelUsuario = data.length;
+      this.librosDelUsuario = data.length;
 
 
     });

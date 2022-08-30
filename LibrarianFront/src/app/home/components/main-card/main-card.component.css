@@ -13,12 +13,12 @@ p {
 }
 
 .btn {
-    background-color: rgba(27, 26, 26, 0.698);
+    background-color: rgba(67, 109, 152);
     color: white;
 }
 
 .btn:hover {
-    background-color: rgb(67, 109, 152);
+    background-color: rgb(7, 51, 96);
 }
 
 .modalFoor {
