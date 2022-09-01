@@ -14,7 +14,6 @@ import { UsersService } from '../services/users.service';
   templateUrl: './view-book.component.html',
   styleUrls: ['./view-book.component.css'],
 })
-
 export class ViewBookComponent implements OnInit {
   idUsuario: number = 0;
   librosDelUsuario!: number;
@@ -31,25 +30,13 @@ export class ViewBookComponent implements OnInit {
     previewLink: '',
   };
 
-  botonVerMas = true;
-  botonVerMenos = false;
-
-  CambiarValorBoton() {
-    this.botonVerMas = false;
-    this.botonVerMenos = true;
-  }
-
-  CambiarValorBoton2() {
-    this.botonVerMas = true;
-    this.botonVerMenos = false;
-  }
-
   reserveAdd: any = {
-
     id_book: 0,
     id_usuario: 0,
     is_reservado: true,
   };
+
+  botonVerMas = true;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -74,7 +61,6 @@ export class ViewBookComponent implements OnInit {
     this.activatedRoute.params
       .pipe(switchMap(({ id }) => this.bookService.buscarLibroPorId(id)))
       .subscribe((book) => {
-
         this.bookVer = book;
 
         this.bookAdd.title = this.bookVer.volumeInfo.title;
@@ -106,30 +92,38 @@ export class ViewBookComponent implements OnInit {
         text: this.translate.instant('MY_BOOKS_ADD_BUTTON_NOT_LOGGED_SUBTEXT'),
         icon: 'warning',
         showCancelButton: true,
-        cancelButtonText: this.translate.instant('MY_BOOKS_ADD_ALERT_CANCEL_BUTTON_TEXT'),
+        cancelButtonText: this.translate.instant(
+          'MY_BOOKS_ADD_ALERT_CANCEL_BUTTON_TEXT'
+        ),
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: this.translate.instant('MY_BOOKS_ADD_ALERT_LOGIN_BUTTON_TEXT')
+        confirmButtonText: this.translate.instant(
+          'MY_BOOKS_ADD_ALERT_LOGIN_BUTTON_TEXT'
+        ),
       }).then((result) => {
         if (result.isConfirmed) {
           this.route.navigate(['/login']);
         }
-      })
+      });
     } else if (this.librosDelUsuario >= 3) {
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
-        text: this.translate.instant('MY_BOOKS_ADD_ALERT_REACHED_LIMIT_TEXT')
-      })
+        text: this.translate.instant('MY_BOOKS_ADD_ALERT_REACHED_LIMIT_TEXT'),
+      });
     } else {
       Swal.fire({
         title: this.translate.instant('MY_BOOKS_ADD_ALERT_BUTTON_LOGGED_TEXT'),
         icon: 'question',
         showCancelButton: true,
-        cancelButtonText: this.translate.instant('MY_BOOKS_ADD_ALERT_CANCEL_BUTTON_TEXT'),
+        cancelButtonText: this.translate.instant(
+          'MY_BOOKS_ADD_ALERT_CANCEL_BUTTON_TEXT'
+        ),
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: this.translate.instant('MY_BOOKS_ADD_ALERT_BUTTON_LOGGED_CONFIRM_TEXT')
+        confirmButtonText: this.translate.instant(
+          'MY_BOOKS_ADD_ALERT_BUTTON_LOGGED_CONFIRM_TEXT'
+        ),
       }).then((result) => {
         if (result.isConfirmed) {
           Swal.fire(
@@ -143,9 +137,7 @@ export class ViewBookComponent implements OnInit {
             },
           });
         }
-      })
-
-
+      });
     }
   }
 
@@ -159,13 +151,14 @@ export class ViewBookComponent implements OnInit {
         this.getReserve();
       },
       error: (_err) => {
-
-      },
+        /* TODO document why this method 'error' is empty */
+      }
     });
   }
 
   getQuery(isbn: string) {
     this.bookService.buscarLibroPorIsbnBD(isbn).subscribe((books) => {
+
       this.reserveAdd.id_book = books.id_book;
 
       this.addReserve(this.reserveAdd);
@@ -178,18 +171,13 @@ export class ViewBookComponent implements OnInit {
     });
   }
 
-
   getReserve() {
     this.reserveService.reservedByUser(this.idUsuario).subscribe((data) => {
       this.librosDelUsuario = data.length;
-
-
     });
   }
 
-
-
-
-
+  CambiarValorBoton() {
+    this.botonVerMas = !this.botonVerMas;
+  }
 }
-

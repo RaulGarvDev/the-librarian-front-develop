@@ -123,33 +123,24 @@
                         </div>
                         <div class="col-12">
                             <div class="d-grid gap-2 col-12">
-                                <div *ngIf="botonVerMas">
-                                    <button
-                                        (click)="CambiarValorBoton()"
-                                        class="btn btn-lg text-light"
-                                        type="button"
-                                        data-bs-toggle="collapse"
-                                        data-bs-target="#collapseExample"
-                                        aria-expanded="false"
-                                        aria-controls="collapseExample"
+                                <button
+                                    (click)="CambiarValorBoton()"
+                                    class="btn btn-lg text-light"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseExample"
+                                    aria-expanded="false"
+                                    aria-controls="collapseExample"
+                                >
+                                    <ng-container
+                                        *ngIf="botonVerMas; else elseTemplate"
                                     >
                                         {{ "BOOK_CARD_SEE_MORE" | translate }}
-                                    </button>
-                                </div>
-
-                                <div *ngIf="botonVerMenos">
-                                    <button
-                                        (click)="CambiarValorBoton2()"
-                                        class="btn btn-lg text-light"
-                                        type="button"
-                                        data-bs-toggle="collapse"
-                                        data-bs-target="#collapseExample"
-                                        aria-expanded="false"
-                                        aria-controls="collapseExample"
-                                    >
-                                    {{ "BOOK_CARD_SEE_LESS" | translate }}
-                                    </button>
-                                </div>
+                                    </ng-container>
+                                    <ng-template #elseTemplate>
+                                        ver menos
+                                    </ng-template>
+                                </button>
 
                                 <div class="collapse" id="collapseExample">
                                     <div class="card card-body">
