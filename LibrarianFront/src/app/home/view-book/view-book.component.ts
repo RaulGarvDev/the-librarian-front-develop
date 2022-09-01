@@ -177,7 +177,14 @@ export class ViewBookComponent implements OnInit {
     });
   }
 
-  CambiarValorBoton() {
-    this.botonVerMas = !this.botonVerMas;
-  }
+  // getHistory(){
+  //   this.bookService.obtenerHistorial().subscribe({
+  //     next: ( _data ) => {
+  //       this.route.navigate(['/']);
+  //     },
+  //     error: ( _err ) => {
+
+  //     }
+  //   })
+  // }
 }

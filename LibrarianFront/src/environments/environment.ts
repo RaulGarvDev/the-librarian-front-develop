@@ -16,7 +16,8 @@ export const environment = {
   urlReservedByUser: `${urlBasic}/reserve/reservedBooksByUserId`,
   urlAllReservesByUser: `${urlBasic}/reserve/getAllReservationById`,
   urlAllBooksByIdBD:  `${urlBasic}/getByIdBook`,
-  URLFindByIsbnDB: `https://thelibrarianback.herokuapp.com`,
+  URLFindByIsbnDB: `${urlBasic}`,
+  URLHistory: `${urlBasic}/get/history`,
 
 };
 

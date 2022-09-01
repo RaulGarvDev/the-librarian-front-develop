@@ -8,39 +8,39 @@ import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
   templateUrl: './main-books.component.html',
   styleUrls: ['./main-books.component.css'],
 })
-
 export class MainBooksComponent implements OnInit {
-
-
   books: Item[] = [];
   errorMessage!: string;
+  cargar: boolean = false;
 
-
-
-  constructor(private bookService: BookService) { }
+  constructor(private bookService: BookService) {}
 
   ngOnInit(): void {
-
     this.getBooks();
-
   }
 
   getBooks() {
-    this.bookService.getRandomBooks().subscribe((data) => {
-      this.books = data.items;
-    },(err)=>{
-      this.errorMessage = err.errorMessage;
-      console.error(this.errorMessage);
+    if (this.cargar) {
+      this.bookService.getRandomBooks().subscribe({
+        next: (data) => {
+          this.books = data.items;
+
+        },
+        error: (err) => {
+          this.errorMessage = err.errorMessage;
+          console.error(this.errorMessage);
+        }
+      });
+
+    } else {
+      this.bookService.obtenerHistorial().subscribe({
+        next: data => {
+          this.books = data.items;
+
+
+        },
+      })
     }
-    );
+
   }
-
 }
-
-
-
-
-
-
-
-
