@@ -35,8 +35,10 @@ export class BookService {
   }
 
   getRandomBooks(): Observable<Books> {
+      return this.http.get<Books>(`${this.API_URL}/random`, this.httpOptions);
 
-    return this.http.get<Books>(`${this.API_URL}/random`, this.httpOptions);
+
+
   }
 
 

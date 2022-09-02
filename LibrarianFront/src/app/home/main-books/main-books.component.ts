@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Item } from '../interfaces/books';
 import { BookService } from '../services/book.service';
-import { Books, VolumeInfo, Item } from '../interfaces/books';
-import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-main-books',
@@ -11,7 +10,6 @@ import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 export class MainBooksComponent implements OnInit {
   books: Item[] = [];
   errorMessage!: string;
-  cargar: boolean = false;
 
   constructor(private bookService: BookService) {}
 
@@ -19,11 +17,12 @@ export class MainBooksComponent implements OnInit {
     this.getBooks();
   }
 
-  getBooks() {
-    if (this.cargar) {
+  public getBooks() {
       this.bookService.getRandomBooks().subscribe({
         next: (data) => {
           this.books = data.items;
+          console.log(this.books);
+
 
         },
         error: (err) => {
@@ -31,16 +30,6 @@ export class MainBooksComponent implements OnInit {
           console.error(this.errorMessage);
         }
       });
-
-    } else {
-      this.bookService.obtenerHistorial().subscribe({
-        next: data => {
-          this.books = data.items;
-
-
-        },
-      })
-    }
 
   }
 }

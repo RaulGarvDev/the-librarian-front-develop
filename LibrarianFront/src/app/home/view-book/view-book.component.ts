@@ -9,11 +9,13 @@ import { BookService } from '../services/book.service';
 import { ReserveService } from '../services/reserve.service';
 import { UsersService } from '../services/users.service';
 
+
 @Component({
   selector: 'app-view-book',
   templateUrl: './view-book.component.html',
   styleUrls: ['./view-book.component.css'],
 })
+
 export class ViewBookComponent implements OnInit {
   idUsuario: number = 0;
   librosDelUsuario!: number;
@@ -177,14 +179,8 @@ export class ViewBookComponent implements OnInit {
     });
   }
 
-  // getHistory(){
-  //   this.bookService.obtenerHistorial().subscribe({
-  //     next: ( _data ) => {
-  //       this.route.navigate(['/']);
-  //     },
-  //     error: ( _err ) => {
+  CambiarValorBoton(){
+    this.botonVerMas = !this.botonVerMas;
+  }
 
-  //     }
-  //   })
-  // }
 }
