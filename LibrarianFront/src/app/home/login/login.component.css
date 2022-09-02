@@ -99,7 +99,8 @@ button.ghost {
 }
 
 form {
-	background-image: url('../../../assets/open_book_left.jpg');
+	/*background-image: url('../../../assets/open_book_left.jpg');*/
+    background-color: #BAC5D5 ;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -193,7 +194,8 @@ input {
 }
 
 .overlay {
-	background-image: url('../../../assets/open_book_right.jpg');
+	/*background-image: url('../../../assets/open_book_right.jpg');*/
+    background-color: #d7dbdd ;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;

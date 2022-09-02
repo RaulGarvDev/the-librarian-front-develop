@@ -24,15 +24,10 @@ export class ResetPasswordComponent implements OnInit {
 
   constructor(public changePassword: UsersService, private router: Router) { }
 
-  ngOnInit(): void {
-    // TODO document why this method 'ngOnInit' is empty
-  }
-
-
+  ngOnInit(): void { }
 
   changePassworCallService(){
 
-    console.log("Console Log" + this.changePasswordDTO.email+this.changePasswordDTO.password+this.changePasswordDTO.newPassword);
 
      this.changePassword.putChangePassword(this.changePasswordDTO).subscribe({
       next: (_datos: any) => {
