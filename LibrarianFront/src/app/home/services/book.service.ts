@@ -17,13 +17,14 @@ export class BookService {
 
   private URLFindByIsbnDB = environment.URLFindByIsbnDB;
 
+  private URLHistory = environment.URLHistory;
 
   private URLFindBookByIdDB = environment.urlAllBooksByIdBD;
 
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
-      "Access-Control-Allow-Origin": "*",   
+      "Access-Control-Allow-Origin": "*",
     } )
   };
 
@@ -34,8 +35,10 @@ export class BookService {
   }
 
   getRandomBooks(): Observable<Books> {
+      return this.http.get<Books>(`${this.API_URL}/random`, this.httpOptions);
 
-    return this.http.get<Books>(`${this.API_URL}/random`, this.httpOptions);
+
+
   }
 
 
@@ -80,6 +83,10 @@ export class BookService {
 
     return this.http.get(`${this.URLFindByIsbnDB}/getByIsbn/${isbn}`, this.httpOptions);
 
+  }
+
+  obtenerHistorial(): Observable<any>{
+    return this.http.get(`${this.URLHistory}`);
   }
 
 

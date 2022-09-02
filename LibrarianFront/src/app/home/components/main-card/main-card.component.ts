@@ -9,7 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./main-card.component.css'],
 })
 export class MainCardComponent implements OnInit {
-  
+
   title = 'appBootstrap';
 
   closeResult!: string;
