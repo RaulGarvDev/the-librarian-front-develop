@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Item } from '../interfaces/books';
 import { BookService } from '../services/book.service';
+import { UsersService } from '../services/users.service';
 
 @Component({
   selector: 'app-main-books',
@@ -9,15 +11,20 @@ import { BookService } from '../services/book.service';
 })
 export class MainBooksComponent implements OnInit {
   books: Item[] = [];
-  errorMessage!: string;
 
-  constructor(private bookService: BookService) {}
+  constructor(private bookService: BookService,
+              private userS: UsersService) {}
 
   ngOnInit(): void {
-    this.getBooks();
+
+    if (this.userS.isLogged()) {
+      this.getHistory();
+    } else {
+      this.getBooks();
+    }
   }
 
-  public getBooks() {
+  getBooks() {
       this.bookService.getRandomBooks().subscribe({
         next: (data) => {
           this.books = data.items;
@@ -26,10 +33,20 @@ export class MainBooksComponent implements OnInit {
 
         },
         error: (err) => {
-          this.errorMessage = err.errorMessage;
-          console.error(this.errorMessage);
+          console.error(err.errorMessage);
         }
       });
 
+  }
+
+  getHistory(){
+    this.bookService.obtenerHistorial().subscribe({
+      next: (data) => {
+        this.books = data.items;
+      },
+      error: (_err) => {
+        // TODO document why this method 'error' is empty
+      }
+    });
   }
 }

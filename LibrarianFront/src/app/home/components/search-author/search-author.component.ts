@@ -25,12 +25,10 @@ export class SearchAuthorComponent implements OnInit {
     private router: Router,
     private translate: TranslateService
   ) {
-
     // Register translation languages
     translate.addLangs(['es', 'en', 'fr', 'de']);
     // Set default language
     translate.setDefaultLang(translate.getBrowserLang()!);
-
   }
 
   //Switch language
@@ -39,8 +37,6 @@ export class SearchAuthorComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-
     this.subscription = this.sharedAuthor.currentMessage.subscribe(
       (message) => (this.author = message)
     );
@@ -50,11 +46,8 @@ export class SearchAuthorComponent implements OnInit {
       )
       .subscribe({
         next: (books) => {
-
           if (books != null) {
             console.log('estoy aqui');
-
-
 
             let resultado: number = books.items.length;
 
@@ -62,8 +55,7 @@ export class SearchAuthorComponent implements OnInit {
               Swal.fire({
                 icon: 'error',
                 title: this.translate.instant('ALERT_POR_AUTHOR'),
-                confirmButtonText: 'Ok!'
-
+                confirmButtonText: 'Ok!',
               }).then((result) => {
                 if (result.isConfirmed) {
                   this.router.navigate(['/']);
@@ -72,45 +64,29 @@ export class SearchAuthorComponent implements OnInit {
             } else {
               this.books = books.items;
             }
-
-          }
-          else {
-
+          } else {
             Swal.fire({
               icon: 'error',
               title: this.translate.instant('ALERT_POR_AUTHOR'),
-              confirmButtonText: 'Ok!'
-
+              confirmButtonText: 'Ok!',
             }).then((result2) => {
               if (result2.isConfirmed) {
                 this.router.navigate(['/']);
               }
             });
-
           }
-
-
-
-
         },
         error: (_err) => {
           Swal.fire({
             icon: 'error',
             title: this.translate.instant('ALERT_POR_AUTHOR'),
-            confirmButtonText: 'Ok!'
-
+            confirmButtonText: 'Ok!',
           }).then((result2) => {
             if (result2.isConfirmed) {
               this.router.navigate(['/']);
             }
           });
-        }
-
+        },
       });
-
-
-
-
-
   }
 }
