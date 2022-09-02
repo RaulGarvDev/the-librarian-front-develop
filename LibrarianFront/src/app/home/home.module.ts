@@ -17,6 +17,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TermsAndConditionsComponent } from './components/terms-and-conditions/terms-and-conditions.component';
 
 export function httpTranslateLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -37,7 +38,8 @@ export function httpTranslateLoaderFactory(http: HttpClient) {
     SearchAuthorComponent,
     MainCardComponent,
     MyBooksComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    TermsAndConditionsComponent
   ],
   exports: [
     LoginComponent,

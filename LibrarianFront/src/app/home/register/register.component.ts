@@ -18,6 +18,7 @@ export class RegisterComponent implements OnInit {
     nombre: '',
     correo: '',
     password: '',
+    check: false
   };
 
   confirmPassword!: string;

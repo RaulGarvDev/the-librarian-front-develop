@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SearchAuthorComponent } from './home/components/search-author/search-author.component';
 import { SearchIsbnComponent } from './home/components/search-isbn/search-isbn.component';
 import { SearchTitleComponent } from './home/components/search-title/search-title.component';
+import { TermsAndConditionsComponent } from './home/components/terms-and-conditions/terms-and-conditions.component';
 import { LoginComponent } from './home/login/login.component';
 import { MainBooksComponent } from './home/main-books/main-books.component';
 import { MyBooksComponent } from './home/my-books/my-books.component';
@@ -21,6 +22,7 @@ const APP_ROUTES: Routes = [
   {path: 'title/:title', component: SearchTitleComponent},
   {path: 'mybooks', component: MyBooksComponent},
   {path: 'author/:author', component: SearchAuthorComponent},
+  {path: 'terms-and-conditions', component: TermsAndConditionsComponent},
   {path: '**', redirectTo: ''}
 
 ]

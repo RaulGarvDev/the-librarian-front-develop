@@ -3,6 +3,7 @@ import Swal from 'sweetalert2';
 import { UsersService } from '../services/users.service';
 import { ChangePassword } from '../interfaces/registro';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-reset-password',
@@ -11,10 +12,6 @@ import { Router } from '@angular/router';
 })
 export class ResetPasswordComponent implements OnInit {
 
-
-
-
-
   changePasswordDTO: ChangePassword = {
     email: '',
     password: '',
@@ -22,9 +19,23 @@ export class ResetPasswordComponent implements OnInit {
   };
 
 
-  constructor(public changePassword: UsersService, private router: Router) { }
+  constructor(private router: Router, public changePassword: UsersService, public translate: TranslateService) {
+    // Register translation languages
+    translate.addLangs(['es', 'en', 'fr', 'de']);
+    // Set default language
+    translate.setDefaultLang(translate.getBrowserLang()!);
+  }
 
-  ngOnInit(): void { }
+  //Switch language
+  translateLanguageTo(lang: string) {
+    this.translate.use(lang);
+  }
+
+  ngOnInit(): void {
+    // TODO document why this method 'ngOnInit' is empty
+  }
+
+
 
   changePassworCallService(){
 
@@ -33,8 +44,8 @@ export class ResetPasswordComponent implements OnInit {
       next: (_datos: any) => {
 
         Swal.fire(
-          'Buen trabajo',
-          'Cambiaste tu contraseña',
+          this.translate.instant('CHANGE_PASSWORD_ALERT_TITLE'),
+          this.translate.instant('CHANGE_PASSWORD_ALERT_TEXT'),
           'success'
         )
 
@@ -46,7 +57,7 @@ export class ResetPasswordComponent implements OnInit {
 
         Swal.fire({
           icon: 'error',
-          title: 'Correo o contraseña no validos',
+          title: this.translate.instant('CHANGE_PASSWORD_ALERT_ERROR_TEXT'),
         });
       }
     })

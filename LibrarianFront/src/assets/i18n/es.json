@@ -71,5 +71,16 @@
     "ALERT_POR_AUTHOR":"Autor no encontrado",
     "ALERT_POR_ISBN":"ISBN no encontrado",
     "ALERT_POR_TITLE":"Titulo no encontrado",
-    "ALERT_REGISTER": "Email ya registrado"
+    "ALERT_REGISTER": "Email ya registrado",
+    "REGISTER_TERMS_TEXT_FIRST_PART": "Aceptar los",
+    "REGISTER_TERMS_TEXT_SECOND_PART": "terminos y condiciones",
+    "BOOK_CARD_SEE_LESS": "Ver menos",
+    "CHANGE_PASSWORD_MAIN_TEXT": "CAMBIA TU CONTRASEÑA",
+    "CHANGE_PASSWORD_PASSWORD_TEXT": "CONTRASEÑA",
+    "CHANGE_NEW_PASSWORD_PASSWORD_TEXT": "NUEVA CONTRASEÑA",
+    "CHANGE_PASSWORD_CLEAN_BUTTON_TEXT": "Limpiar",
+    "CHANGE_PASSWORD_SEND_BUTTON_TEXT": "Enviar",
+    "CHANGE_PASSWORD_ALERT_TITLE": "Buen trabajo",
+    "CHANGE_PASSWORD_ALERT_TEXT": "Cambiaste tu contraseña",
+    "CHANGE_PASSWORD_ALERT_ERROR_TEXT": "Correo o contraseña no validos"
 }

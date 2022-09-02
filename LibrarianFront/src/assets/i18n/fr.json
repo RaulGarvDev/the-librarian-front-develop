@@ -71,5 +71,16 @@
     "ALERT_POR_AUTHOR":"Auteur introuvable",
     "ALERT_POR_ISBN":"ISBN introuvable",
     "ALERT_POR_TITLE":"Titre introuvable",
-    "ALERT_REGISTER": "E-mail déjà enregistré"
+    "ALERT_REGISTER": "E-mail déjà enregistré",
+    "REGISTER_TERMS_TEXT_FIRST_PART": "Accepter les",
+    "REGISTER_TERMS_TEXT_SECOND_PART": "termes et conditions",
+    "BOOK_CARD_SEE_LESS": "Voir moins",
+    "CHANGE_PASSWORD_MAIN_TEXT": "CHANGEZ VOTRE MOT DE PASSE",
+    "CHANGE_PASSWORD_PASSWORD_TEXT": "LE MOT DE PASSE",
+    "CHANGE_NEW_PASSWORD_PASSWORD_TEXT": "NOUVEAU MOT DE PASSE",
+    "CHANGE_PASSWORD_CLEAN_BUTTON_TEXT": "Nettoyer",
+    "CHANGE_PASSWORD_SEND_BUTTON_TEXT": "Envoyer",
+    "CHANGE_PASSWORD_ALERT_TITLE": "Bon travail",
+    "CHANGE_PASSWORD_ALERT_TEXT": "Vous avez modifié votre mot de passe",
+    "CHANGE_PASSWORD_ALERT_ERROR_TEXT": "Email ou mot de passe invalide"
 }

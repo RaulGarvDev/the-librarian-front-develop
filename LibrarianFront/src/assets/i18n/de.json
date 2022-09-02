@@ -71,5 +71,16 @@
     "ALERT_POR_AUTHOR":"Autor nicht gefunden",
     "ALERT_POR_ISBN":"ISBN nicht gefunden",
     "ALERT_POR_TITLE":"Titel nicht gefunden",
-    "ALERT_REGISTER": "Email schon registriert"
+    "ALERT_REGISTER": "Email schon registriert",
+    "REGISTER_TERMS_TEXT_FIRST_PART": "Akzeptieren Sie die",
+    "REGISTER_TERMS_TEXT_SECOND_PART": "Allgemeinen Geschäftsbedingungen",
+    "BOOK_CARD_SEE_LESS": "Siehe weniger",
+    "CHANGE_PASSWORD_MAIN_TEXT": "ÄNDERN SIE IHR PASSWORT",
+    "CHANGE_PASSWORD_PASSWORD_TEXT": "PASSWORT",
+    "CHANGE_NEW_PASSWORD_PASSWORD_TEXT": "NEUES PASSWORT",
+    "CHANGE_PASSWORD_CLEAN_BUTTON_TEXT": "Aufräumen",
+    "CHANGE_PASSWORD_SEND_BUTTON_TEXT": "Senden",
+    "CHANGE_PASSWORD_ALERT_TITLE": "Gute arbeit",
+    "CHANGE_PASSWORD_ALERT_TEXT": "Sie haben ihr passwort geändert",
+    "CHANGE_PASSWORD_ALERT_ERROR_TEXT": "Ungültige E-Mail oder passwort"
 }
