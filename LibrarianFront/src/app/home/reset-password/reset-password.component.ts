@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 import { UsersService } from '../services/users.service';
 import { ChangePassword } from '../interfaces/registro';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reset-password',
@@ -21,7 +22,7 @@ export class ResetPasswordComponent implements OnInit {
   };
 
 
-  constructor(public changePassword: UsersService) { }
+  constructor(public changePassword: UsersService, private router: Router) { }
 
   ngOnInit(): void {
     // TODO document why this method 'ngOnInit' is empty
@@ -41,6 +42,10 @@ export class ResetPasswordComponent implements OnInit {
           'Cambiaste tu contraseña',
           'success'
         )
+
+        this.router.navigate(['/login']);
+
+
       },
       error:(_error) => {
 
